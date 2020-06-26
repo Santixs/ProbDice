@@ -1,15 +1,18 @@
 import random
+import sys
 
 import numpy as np
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIntValidator
+from PyQt5.QtWidgets import QSlider
 from matplotlib import pyplot
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 from matplotlib.ticker import PercentFormatter
 
 import interactFiles
-from scrollLabel import *
+from scrollLabel import ScrollLabel
 
 
 class Ui_MainWindow(object):
@@ -235,9 +238,7 @@ class Ui_MainWindow(object):
             self.label_3.setStyleSheet("color: red;")
 
 
-if __name__ == "__main__":
-    import sys
-
+def start():
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
